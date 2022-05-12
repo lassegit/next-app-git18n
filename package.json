@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "translate": "git18n --files '(pages|components)/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "babel-plugin-formatjs": "^10.3.20",

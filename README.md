@@ -18,9 +18,11 @@ Add `react-intl` and the babel plugin that allows using various functions and co
 }
 ```
 
-Add `git18n` package that extracts and manages all your translations: `yarn add -D git18n`. Get the API key from https://git18n.com site and add it to your `.env` file.
+Add `git18n` package that extracts and manages all your translations: `yarn add -D git18n`. Get the `GIT18N_SECRET_PROJECT_KEY` key from https://git18n.com site and add it to the `.env` file.
 
-## Additional nicities
+Add `"translate": "git18n --files '(pages|components)/**/*.{js,jsx,ts,tsx}'"` the `scripts` section in `package.json` file and run `yarn translate` to add text that requires translation.
+
+## Additional niceties
 
 Omit the `.locales` folder from git by adding it to `.gitignore`:
 
