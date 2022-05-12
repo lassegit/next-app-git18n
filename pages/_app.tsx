@@ -14,7 +14,7 @@ const messages = locales.reduce((acc, cur) => {
 }, {} as Record<string, {}>);
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { locale = 'en' } = useRouter();
+  const { locale = 'de' } = useRouter();
 
   return (
     <IntlProvider locale={locale} defaultLocale="en" messages={messages[locale]}>
