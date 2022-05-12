@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { FormattedMessage, useIntl } from 'react-intl';
 
@@ -106,7 +105,7 @@ const Home: NextPage<Props> = ({ locale, locales, setLocale }) => {
             values={{
               name: (
                 <span className={styles.logo}>
-                  <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+                  <img src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
                 </span>
               ),
             }}
