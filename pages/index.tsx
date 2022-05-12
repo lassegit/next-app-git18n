@@ -4,7 +4,13 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { FormattedMessage, useIntl } from 'react-intl';
 
-const Home: NextPage = () => {
+type Props = {
+  locale: string;
+  locales: string[];
+  setLocale: (locale: string) => void;
+};
+
+const Home: NextPage<Props> = ({ locale, locales, setLocale }) => {
   const { formatMessage } = useIntl();
   return (
     <div className={styles.container}>
@@ -16,6 +22,16 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <div className={styles.languageSelector}>
+        <select value={locale} onChange={(e) => setLocale(e.target.value)}>
+          {locales.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
