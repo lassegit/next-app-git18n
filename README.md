@@ -2,19 +2,12 @@
 
 ## Setup
 
-Add `react-intl` and the babel plugin that allows using various functions and components without the manually set id: `yarn add react-intl babel-plugin-formatjs`. Add `.babelrc` to use the new `babel-plugin-formatjs`:
+Add `react-intl` and the babel plugin that allows using various functions and components without the manually set id: `yarn add react-intl babel-plugin-formatjs git18n`. Add `.babelrc` to use the new `babel-plugin-formatjs`:
 
 ```json
 {
   "presets": ["next/babel"],
-  "plugins": [
-    [
-      "formatjs",
-      {
-        "idInterpolationPattern": "[sha512:contenthash:base64:6]"
-      }
-    ]
-  ]
+  "plugins": ["formatjs"] // This allow using react-intl without ids
 }
 ```
 
