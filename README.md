@@ -61,4 +61,5 @@ Omit the `.locales` folder from git by adding it to `.gitignore`:
 Pulls latest translations and build:
 
 Vercel deployment: https://next-app-git18n.vercel.app/
+
 Render deployment: https://next-app-git18n.onrender.com/
