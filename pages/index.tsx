@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { FormattedMessage, useIntl } from 'react-intl';
+import { LanguageSwitch } from '../components/LanguageSwitch';
 
 type Props = {
   locale: string;
@@ -22,15 +23,7 @@ const Home: NextPage<Props> = ({ locale, locales, setLocale }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.languageSelector}>
-        <select value={locale} onChange={(e) => setLocale(e.target.value)}>
-          {locales.map((item) => (
-            <option key={item} value={item}>
-              {item}
-            </option>
-          ))}
-        </select>
-      </div>
+      <LanguageSwitch locale={locale} locales={locales} setLocale={setLocale} />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
