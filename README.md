@@ -47,6 +47,12 @@ Example, the build command could look like:
 }
 ```
 
+The build command will then extract all translation, e.g.:
+
+```js
+<FormattedMessage defaultMessage="Welcome to my website"> // No id required, it is automatically hashed
+```
+
 ## Additional niceties
 
 Omit the `.locales` folder from git by adding it to `.gitignore`:
