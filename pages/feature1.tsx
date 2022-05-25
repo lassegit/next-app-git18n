@@ -22,7 +22,10 @@ const Feature1: NextPage<Props> = ({ locale, locales, setLocale }) => {
         <FormattedMessage defaultMessage="And this is some body text." />
       </p>
       <p>
-        <FormattedMessage defaultMessage="And this is some body text." id="my-custom-id" />
+        <FormattedMessage
+          defaultMessage="And this is some body text."
+          id="my-custom-id-that-is-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long"
+        />
       </p>
       <p>
         <FormattedMessage defaultMessage="Another custom id text..." />
