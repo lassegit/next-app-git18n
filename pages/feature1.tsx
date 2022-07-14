@@ -14,6 +14,8 @@ const Feature1: NextPage<Props> = ({ locale, locales, setLocale }) => {
       <LanguageSwitch locale={locale} locales={locales} setLocale={setLocale} />
       <h1>
         <FormattedMessage defaultMessage="A new feature page being added." />
+        <FormattedMessage defaultMessage="Sub heading title..." />
+        <FormattedMessage defaultMessage="Another sub heading...!" id="custom-id" />
       </h1>
       <h2>
         <FormattedMessage defaultMessage="This is a simple sub heading!" />

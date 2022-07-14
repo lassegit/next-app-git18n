@@ -28,12 +28,18 @@ const Home: NextPage<Props> = ({ locale, locales, setLocale }) => {
       <main className={styles.main}>
         <h1 className={styles.title}>
           <FormattedMessage
+            id="frontpage.title"
             defaultMessage="Welcome to {link}"
             values={{
               link: <a href="https://nextjs.org">Next.js!</a>,
             }}
+            description="This is description context."
           />
         </h1>
+
+        <h2>
+          <FormattedMessage id="frontpage.subtitle" defaultMessage="This is great" />
+        </h2>
 
         <p className={styles.description}>
           <FormattedMessage
@@ -105,6 +111,8 @@ const Home: NextPage<Props> = ({ locale, locales, setLocale }) => {
           />
         </a>
       </footer>
+
+      <FormattedMessage defaultMessage="Just another again!!! 🫡 …æå“åæœø¨ü" id="just-added-id" />
     </div>
   );
 };

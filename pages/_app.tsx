@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { IntlProvider } from 'react-intl';
 
-export const locales = ['de']; // The wished translations
+export const locales = ['de', 'en']; // The wished translations
 
 // The git18n script will generate a .locales folder with the translations
 const messages = locales.reduce((acc, cur) => {
@@ -15,7 +15,7 @@ const messages = locales.reduce((acc, cur) => {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [locale, setLocale] = React.useState('en');
-  const selectLocales = [...locales, 'en'];
+  const selectLocales = locales;
 
   return (
     <IntlProvider locale={locale} defaultLocale="en" messages={messages[locale]}>
