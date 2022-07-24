@@ -9,13 +9,7 @@ type Props = {
 export function LanguageSwitch({ setLocale }: Props) {
   return (
     <div className={styles.languageSelector}>
-      <select
-        value={Intl.locale}
-        onChange={(e) => {
-          const locale = e.target.value;
-          setLocale(locale);
-        }}
-      >
+      <select value={Intl.locale} onChange={(e) => setLocale(e.target.value)}>
         {locales.map((item) => (
           <option key={item} value={item}>
             {item}

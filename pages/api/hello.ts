@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import Intl from '../../i18n';
+import Intl, { defaultLocale } from '../../i18n';
 
 type Data = {
   name: string;
@@ -9,11 +9,11 @@ type Data = {
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   const locale = req.headers['accept-language'];
-  Intl.setLocale(locale || 'en');
+  Intl.setLocale('dk');
 
   const title = Intl.t.formatMessage({
-    id: 'frontpage.title',
-    defaultMessage: 'This is the default title',
+    id: 'api.route.name',
+    defaultMessage: 'This is the hello route',
   });
 
   return res.status(200).json({ name: 'John Doe', title });
