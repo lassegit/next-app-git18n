@@ -6,8 +6,6 @@ import Intl, { defaultLocale } from '../i18n';
 class MyApp extends React.Component<AppProps> {
   constructor(props: AppProps) {
     super(props);
-    console.log(props.router.locale);
-
     Intl.setLocale(props.router.locale || defaultLocale);
   }
 
