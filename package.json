@@ -10,14 +10,14 @@
     "build": "yarn translate && next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "translate": "git18n --files '(pages|components)/**/*.{js,jsx,ts,tsx}'"
+    "translate": "git18n --files '(pages|components)/**/*.{js,jsx,ts,tsx}' --local"
   },
   "dependencies": {
     "babel-plugin-formatjs": "^10.3.20",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-intl": "^5.25.1"
+    "react-intl": "^6.0.5"
   },
   "devDependencies": {
     "@types/node": "17.0.32",
