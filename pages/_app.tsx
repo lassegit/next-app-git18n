@@ -1,26 +1,23 @@
 import React from 'react';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { IntlProvider } from 'react-intl';
+import Intl, { defaultLocale } from '../i18n';
 
-export const locales = ['de', 'en']; // The wished translations
+class MyApp extends React.Component<AppProps> {
+  constructor(props: AppProps) {
+    super(props);
+    Intl.setLocale(props.router.locale || defaultLocale);
+  }
 
-// The git18n script will generate a .locales folder with the translations
-const messages = locales.reduce((acc, cur) => {
-  try {
-    acc[cur] = require(`../.locales/${cur}.json`);
-  } catch {}
-  return acc;
-}, {} as Record<string, {}>);
+  setLocale = (locale: string) => {
+    Intl.setLocale(locale);
+    this.forceUpdate();
+  };
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const [locale, setLocale] = React.useState('en');
-  const selectLocales = locales;
-
-  return (
-    <IntlProvider locale={locale} defaultLocale="en" messages={messages[locale]}>
-      <Component locale={locale} locales={selectLocales} setLocale={setLocale} {...pageProps} />
-    </IntlProvider>
-  );
+  render() {
+    const { Component, pageProps } = this.props;
+    return <Component setLocale={this.setLocale} {...pageProps} />;
+  }
 }
+
 export default MyApp;
